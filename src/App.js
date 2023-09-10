@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { NavLink } from "react-router-dom";
 import Contact from './pages/contact';
 import About from './pages/about';
 import Products from './pages/products';

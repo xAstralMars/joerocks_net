@@ -43,7 +43,7 @@ const home = () => {
                 <li><h3>•<a style={{ color: "#fff" }} href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank" rel="noreferrer"> Java</a></h3></li>
                 <li><h3>•<a style={{ color: "#fff" }} href="https://en.wikipedia.org/wiki/Kotlin_(programming_language)" target="_blank" rel="noreferrer"> Kotlin</a></h3></li>
             </ol>
-
+            
             <h2 className="programmingh2"><u>Languages</u></h2>
             <ol>
                 <li><h3 className="ccpp">• English</h3></li>

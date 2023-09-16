@@ -5,8 +5,24 @@ import { NavLink } from "react-router-dom";
 import About from './about';
 import Contact from './contact';
 import Products from './products'
+import search from './search.png';
+import {Search} from 'react-ionicons';
  
 const home = () => {
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+  function menuBtnChange() {
+    try {
+      if(sidebar.classList.contains("open") && sidebar){ 
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+      }else {
+        closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+      }
+    } catch {
+      console.log("heyyyy... thats not supposed to happen")
+    }
+   }   
     return (
         <div>
           <meta charSet="UTF-8" />
@@ -29,7 +45,58 @@ const home = () => {
                   <Route path='/products' element={<Products />}/>
                 </Routes>
           </header>
-        <div className='homepageWrapper'>
+          <div className="sidebar">
+      <div className="logo-details">
+        <i className="bx bxl-c-plus-plus icon"></i>
+        <div className="logo_name">joerocks.net</div>
+        <i className="bx bx-menu" id="btn" onClick={() => {
+            let sidebar = document.querySelector(".sidebar");
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+          }}><b>≡</b></i>
+      </div>
+      <ul className="nav-list">
+      <li>
+          <i className="bx bx-search" onClick={() => {
+            let sidebar = document.querySelector(".sidebar");
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+          }}><Search className="search-icon" color={'#FFFFFF'} style={{ marginTop: "12px" }} /></i>
+          <input type="text" placeholder="Search..." />
+          <span className="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="/home">
+            <i className="bx bx-grid-alt"></i>
+            <span className="links_name">Home</span>
+          </a>
+          <span className="tooltip">Home</span>
+        </li>
+        <li>
+          <a href="/about">
+            <i className="bx bx-user"></i>
+            <span className="links_name">About</span>
+          </a>
+          <span className="tooltip">About</span>
+        </li>
+        <li>
+          <a href="/products">
+            <i className="bx bx-chat"></i>
+            <span className="links_name">Products</span>
+          </a>
+          <span className="tooltip">Products</span>
+        </li>
+        <li>
+          <a href="/contact">
+            <i className="bx bx-pie-chart-alt-2"></i>
+            <span className="links_name">Contact</span>
+          </a>
+          <span className="tooltip">Contact</span>
+        </li>
+      </ul>
+    </div>
+          <div className='homepageWrapper'>
+            <div className="homepage-sidebarfix">
             <div className='header-homepage'>
               <h2 className='homepage-header' style={{ fontSize: "45px"}}><b>Joe Rocks</b></h2>
             </div>
@@ -52,7 +119,7 @@ const home = () => {
                 <li><h3>• Hindi</h3></li>
                 <li><h3>• Tamil</h3></li>
             </ol>
-
+          </div>
         </div>
       </div>
     );

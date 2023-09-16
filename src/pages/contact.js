@@ -15,9 +15,9 @@ const contact = () => {
                 Contact
               </h1>
               <nav className="navigation">
-                <NavLink to="/home" activeStyle>Home</NavLink>
-                  <NavLink to="/about" activeStyle>About</NavLink>
-                  <NavLink to="/products" activeStyle>Products</NavLink>
+                <NavLink to="/home" >Home</NavLink>
+                  <NavLink to="/about" >About</NavLink>
+                  <NavLink to="/products" >Products</NavLink>
                   {/* <NavLink to="/contact" activeStyle>Contact</NavLink> */}
               </nav>
               <Routes>

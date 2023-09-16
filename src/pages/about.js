@@ -11,7 +11,6 @@ import {HomeSharp} from 'react-ionicons';
 const about = () => {
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
-  let searchBtn = document.querySelector(".bx-search");
   function menuBtnChange() {
     try {
       if(sidebar.classList.contains("open") && sidebar){ 

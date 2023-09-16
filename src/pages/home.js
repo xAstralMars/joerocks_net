@@ -5,13 +5,11 @@ import { NavLink } from "react-router-dom";
 import About from './about';
 import Contact from './contact';
 import Products from './products'
-import search from './search.png';
 import {Search} from 'react-ionicons';
  
 const home = () => {
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
-  let searchBtn = document.querySelector(".bx-search");
   function menuBtnChange() {
     try {
       if(sidebar.classList.contains("open") && sidebar){ 

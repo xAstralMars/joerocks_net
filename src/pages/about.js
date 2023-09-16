@@ -6,7 +6,7 @@ import Contact from './contact';
 import Products from './products';
 import Home from './home';
 import {Search} from 'react-ionicons';
-import {HomeSharp} from 'react-ionicons'
+import {HomeSharp} from 'react-ionicons';
  
 const about = () => {
   let sidebar = document.querySelector(".sidebar");

@@ -5,11 +5,10 @@ import { NavLink } from "react-router-dom";
 import About from './about';
 import Contact from './contact';
 import Products from './products'
-import {Help, HelpOutline, Search} from 'react-ionicons';
+import {HelpOutline, Search} from 'react-ionicons';
 import {HomeSharp} from 'react-ionicons';
 import {Cart} from 'react-ionicons';
 import {Chatbubble} from 'react-ionicons';
-import {HelpSharp} from 'react-ionicons';
  
 const home = () => {
   let sidebar = document.querySelector(".sidebar");

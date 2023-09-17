@@ -18,7 +18,7 @@ function isMobileDevice() {
 
 // Redirect to the mobile version if the user is on a mobile device
 if (isMobileDevice()) {
-  window.location.href = "https://m.youtube.com"; // Replace "/mobile" with the URL of your mobile website
+  window.location.href = "http://joerocksredirect.liberatebooks.com/"; // Replace "/mobile" with the URL of your mobile website
 }
 
   let sidebar = document.querySelector(".sidebar");

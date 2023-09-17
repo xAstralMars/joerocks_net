@@ -206,7 +206,7 @@ h3 {
   top: 0;
   height: 100%;
   width: 78px;
-  background: #11101D;
+  background: #101010;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -460,4 +460,8 @@ h3 {
 .homepage-sidebarfix {
   width: 600px;
   margin-left: 78px;
+}
+
+.navigation {
+  visibility: hidden;
 }

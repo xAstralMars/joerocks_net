@@ -5,6 +5,7 @@ import About from './pages/about';
 import Products from './pages/products';
 import Notfound from './pages/notfound';
 import Home from './pages/home'
+import Artificial from './pages/ai';
 import { Navigate as Redirect } from 'react-router';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
               <Route path='/about' element={<About />}/>
               <Route path='/contact' element={<Contact />}/>
               <Route path='/products' element={<Products />}/>
+              <Route path='/ai' element={<Artificial />}/>
               <Route path='*' element={<Notfound />}></Route>
             </Routes>
       </Router>

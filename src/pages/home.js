@@ -9,6 +9,8 @@ import {HelpOutline, Search} from 'react-ionicons';
 import {HomeSharp} from 'react-ionicons';
 import {Cart} from 'react-ionicons';
 import {Chatbubble} from 'react-ionicons';
+import {Cloud} from 'react-ionicons';
+import Artificial from './ai';
  
 const home = () => {
   // Check if the user agent indicates a mobile device
@@ -18,7 +20,7 @@ function isMobileDevice() {
 
 // Redirect to the mobile version if the user is on a mobile device
 if (isMobileDevice()) {
-  window.location.href = "http://joerocksredirect.liberatebooks.com/"; // Replace "/mobile" with the URL of your mobile website
+  alert("You're on a mobile device!");
 }
 
   let sidebar = document.querySelector(".sidebar");
@@ -54,6 +56,7 @@ if (isMobileDevice()) {
                   <Route path='/about' element={<About />}/>
                   <Route path='/contact' element={<Contact />}/>
                   <Route path='/products' element={<Products />}/>
+                  <Route path='/ai' element={<Artificial />}/>
                 </Routes>
           </header>
           <div className="sidebar">
@@ -103,6 +106,13 @@ if (isMobileDevice()) {
             <span className="links_name">Contact</span>
           </NavLink>
           <span className="tooltip">Contact</span>
+        </li>
+        <li>
+          <NavLink to="/ai">
+            <i className="bx bx-pie-chart-alt-2"><Cloud color={'#FFFFFF'} style={{marginTop: "12px"}}></Cloud></i>
+            <span className="links_name">AI</span>
+          </NavLink>
+          <span className="tooltip">AI</span>
         </li>
       </ul>
     </div>

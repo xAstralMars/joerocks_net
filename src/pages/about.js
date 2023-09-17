@@ -9,6 +9,7 @@ import {HelpOutline, Search} from 'react-ionicons';
 import {HomeSharp} from 'react-ionicons';
 import {Cart} from 'react-ionicons';
 import {Chatbubble} from 'react-ionicons';
+import {Cloud} from 'react-ionicons';
  
 const about = () => {
   let sidebar = document.querySelector(".sidebar");
@@ -92,6 +93,13 @@ const about = () => {
             <span className="links_name">Contact</span>
           </NavLink>
           <span className="tooltip">Contact</span>
+        </li>
+        <li>
+          <NavLink to="/ai">
+            <i className="bx bx-pie-chart-alt-2"><Cloud color={'#FFFFFF'} style={{marginTop: "12px"}}></Cloud></i>
+            <span className="links_name">AI</span>
+          </NavLink>
+          <span className="tooltip">AI</span>
         </li>
       </ul>
     </div>

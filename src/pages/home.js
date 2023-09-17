@@ -11,6 +11,16 @@ import {Cart} from 'react-ionicons';
 import {Chatbubble} from 'react-ionicons';
  
 const home = () => {
+  // Check if the user agent indicates a mobile device
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Redirect to the mobile version if the user is on a mobile device
+if (isMobileDevice()) {
+  window.location.href = "/mobile"; // Replace "/mobile" with the URL of your mobile website
+}
+
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
   function menuBtnChange() {

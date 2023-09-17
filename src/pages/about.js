@@ -5,8 +5,11 @@ import { NavLink } from "react-router-dom";
 import Contact from './contact';
 import Products from './products';
 import Home from './home';
-import {Search} from 'react-ionicons';
+import {Help, HelpOutline, Search} from 'react-ionicons';
 import {HomeSharp} from 'react-ionicons';
+import {Cart} from 'react-ionicons';
+import {Chatbubble} from 'react-ionicons';
+import {HelpSharp} from 'react-ionicons';
  
 const about = () => {
   let sidebar = document.querySelector(".sidebar");
@@ -72,21 +75,21 @@ const about = () => {
         </li>
         <li>
           <a href="/about">
-            <i className="bx bx-user"></i>
+            <i className="bx bx-user"><HelpOutline color={'#FFFFFF'} style={{marginTop: "12px"}}></HelpOutline></i>
             <span className="links_name">About</span>
           </a>
           <span className="tooltip">About</span>
         </li>
         <li>
           <a href="/products">
-            <i className="bx bx-chat"></i>
+            <i className="bx bx-chat"><Cart color={'#FFFFFF'} style={{marginTop: "12px"}}></Cart></i>
             <span className="links_name">Products</span>
           </a>
           <span className="tooltip">Products</span>
         </li>
         <li>
           <a href="/contact">
-            <i className="bx bx-pie-chart-alt-2"></i>
+            <i className="bx bx-pie-chart-alt-2"><Chatbubble color={'#FFFFFF'} style={{marginTop: "12px"}}></Chatbubble></i>
             <span className="links_name">Contact</span>
           </a>
           <span className="tooltip">Contact</span>

@@ -5,7 +5,11 @@ import { NavLink } from "react-router-dom";
 import About from './about';
 import Contact from './contact';
 import Products from './products'
-import {Search} from 'react-ionicons';
+import {Help, HelpOutline, Search} from 'react-ionicons';
+import {HomeSharp} from 'react-ionicons';
+import {Cart} from 'react-ionicons';
+import {Chatbubble} from 'react-ionicons';
+import {HelpSharp} from 'react-ionicons';
  
 const home = () => {
   let sidebar = document.querySelector(".sidebar");
@@ -46,7 +50,7 @@ const home = () => {
           <div className="sidebar">
       <div className="logo-details">
         <i className="bx bxl-c-plus-plus icon"></i>
-        <div className="logo_name">joerocks.net</div>
+        <div className="logo_name"><font className="fontlogo2">joerocks</font><font className="fontlogo">.net</font></div>
         <i className="bx bx-menu" id="btn" onClick={() => {
             let sidebar = document.querySelector(".sidebar");
             sidebar.classList.toggle("open");
@@ -64,31 +68,31 @@ const home = () => {
           <span className="tooltip">Search</span>
         </li>
         <li>
-          <a href="/home">
-            <i className="bx bx-grid-alt"></i>
+          <NavLink to="/home">
+            <i className="bx bx-grid-alt"><HomeSharp color={'#FFFFFF'} style={{marginTop: "12px"}}></HomeSharp></i>
             <span className="links_name">Home</span>
-          </a>
+          </NavLink>
           <span className="tooltip">Home</span>
         </li>
         <li>
-          <a href="/about">
-            <i className="bx bx-user"></i>
+          <NavLink to="/about">
+            <i className="bx bx-user"><HelpOutline color={'#FFFFFF'} style={{marginTop: "12px"}}></HelpOutline></i>
             <span className="links_name">About</span>
-          </a>
+          </NavLink>
           <span className="tooltip">About</span>
         </li>
         <li>
-          <a href="/products">
-            <i className="bx bx-chat"></i>
+          <NavLink to="/products">
+            <i className="bx bx-chat"><Cart color={'#FFFFFF'} style={{marginTop: "12px"}}></Cart></i>
             <span className="links_name">Products</span>
-          </a>
+          </NavLink>
           <span className="tooltip">Products</span>
         </li>
         <li>
-          <a href="/contact">
-            <i className="bx bx-pie-chart-alt-2"></i>
+          <NavLink to="/contact">
+            <i className="bx bx-pie-chart-alt-2"><Chatbubble color={'#FFFFFF'} style={{marginTop: "12px"}}></Chatbubble></i>
             <span className="links_name">Contact</span>
-          </a>
+          </NavLink>
           <span className="tooltip">Contact</span>
         </li>
       </ul>

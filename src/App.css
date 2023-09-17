@@ -258,6 +258,20 @@ h3 {
   text-align: center;
   line-height: 60px;
 }
+
+.sidebar b{
+  color: #fff;
+  height: 50px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.bx-user p{
+  text-align: center;
+}
+
 .sidebar .nav-list{
   margin-top: 20px;
   height: 100%;

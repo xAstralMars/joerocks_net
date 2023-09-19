@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { Routes, Route } from 'react-router-dom';
 import '../App.css'
 import { NavLink } from "react-router-dom";
@@ -10,8 +10,8 @@ import {HomeSharp} from 'react-ionicons';
 import {Cart} from 'react-ionicons';
 import {Chatbubble} from 'react-ionicons';
 import {Cloud} from 'react-ionicons';
-// import { Axios } from "axios";
-// const PALM_API_KEY = 'AIzaSyDOZ99Jb6-Do8OMegf9i67asLoWKA--azk';  // replace your API Key
+import axios from "axios";
+const PALM_API_KEY = 'AIzaSyDOZ99Jb6-Do8OMegf9i67asLoWKA--azk';  // replace your API Key
 
 const Artificial = () => {
     let sidebar = document.querySelector(".sidebar");
@@ -28,69 +28,80 @@ const Artificial = () => {
     }
    }
 
-//    const [messages, setMessages] = useState([]);
-//    const [inputText, setInputText] = useState('');
+   const [messages, setMessages] = useState([]);
+   const [inputText, setInputText] = useState('');
 
-//    const generateText = async () => {
-//     if (inputText.trim() === '') {
-//       return; 
-//     }
+   const generateText = async () => {
+    if (inputText.trim() === '') {
+      return; 
+    }
   
-//     const apiUrl = `https://generativelanguage.googleapis.com/v1beta2/models/chat-bison-001:generateMessage`;
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta2/models/chat-bison-001:generateMessage`;
   
-//     const requestData = {
-//       prompt: {
-//         context: '',
-//         examples: [],
-//         messages: [{ content: inputText }]
-//       },
-//       temperature: 0.25,
-//       top_k: 40,
-//       top_p: 0.95,
-//       candidate_count: 1,
-//     };
+    const requestData = {
+      prompt: {
+        context: '',
+        examples: [],
+        messages: [{ content: inputText }]
+      },
+      temperature: 0.25,
+      top_k: 40,
+      top_p: 0.95,
+      candidate_count: 1,
+    };
   
-//     const headers = {
-//       'Content-Type': 'application/json',
-//     };
+    const headers = {
+      'Content-Type': 'application/json',
+    };
   
-//     try {
-//       const response = await Axios.post(`${apiUrl}?key=${PALM_API_KEY}`, requestData, {
-//         headers,
-//       });
+    try {
+      const response = await axios.post(`${apiUrl}?key=${PALM_API_KEY}`, requestData, {
+        headers,
+      });
+
+      // const response = await fetch(`${apiUrl}?key=${PALM_API_KEY}`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json", // Set the appropriate content type
+      //     ...headers, // You can add your additional headers here
+      //   },
+      //   body: JSON.stringify(requestData), // Convert requestData to JSON
+      // })
+
   
-//       if (response.status === 200) {
-//         if (response.data && response.data.candidates && response.data.candidates.length > 0) {
-//           const botResponse = response.data.candidates[0].content;
+      if (response.status === 200) {
+        console.log(response);
+        if (response.data && response.data.candidates && response.data.candidates.length > 0) {
+          const botResponse = response.data.candidates[0].content;
   
-//           // Add the user's input to the messages array
-//           const newUserMessage = {
-//             id: messages.length + 1,
-//             text: inputText,
-//             sender: 'user', // Set the sender as 'user'
-//             timestamp: new Date().getTime(),
-//           };
+          // Add the user's input to the messages array
+          const newUserMessage = {
+            id: messages.length + 1,
+            text: inputText,
+            sender: 'user', // Set the sender as 'user'
+            timestamp: new Date().getTime(),
+          };
   
-//           // Add the bot's response to the messages array
-//           const newBotMessage = {
-//             id: messages.length + 2,
-//             content: botResponse,
-//             sender: 'bot', // Set the sender as 'bot'
-//             timestamp: new Date().getTime(),
-//           };
+          // Add the bot's response to the messages array
+          const newBotMessage = {
+            id: messages.length + 2,
+            content: botResponse,
+            sender: 'bot', // Set the sender as 'bot'
+            timestamp: new Date().getTime(),
+          };
   
-//           setMessages([...messages, newUserMessage, newBotMessage]);
-//           setInputText('');
-//         } else {
-//           console.error('Response structure is not as expected.');
-//         }
-//       } else {
-//         console.error('Google Cloud API request failed with status:', response.status);
-//       }
-//     } catch (error) {
-//       console.error('An error occurred while making the Google Cloud API request:', error);
-//     }
-// };
+          setMessages([...messages, newUserMessage, newBotMessage]);
+          setInputText('');
+        } else {
+          console.error('Response structure is not as expected.');
+        }
+      } else {
+        console.error('Google Cloud API request failed with status:', response.status);
+      }
+    } catch (error) {
+      console.error('An error occurred while making the Google Cloud API request:', error);
+    }
+};
    
     return (
         <div>
@@ -174,16 +185,19 @@ const Artificial = () => {
     </div>
           <div className='homepageWrapper'>
             <div className="homepage-sidebarfix">
-                {/* <form onSubmit={(e) => {
+                <form onSubmit={(e) => {
                     e.preventDefault();
                     generateText();
                 }}>
-                    <input type="text" onChange={(e) => {
+                    <input className="ai-textprompt" type="text" value={inputText} onChange={(e) => {
                         setInputText(e.target.value)
                     }}></input>
-                    <button type="submit">Submit</button>
+                    <button className="ai-submitbtn" type="submit">Submit</button>
                 </form>
-                <div>{messages}</div> */}
+                {messages.map(() => {
+                    <h2 style={{ color: "#FFFFFF" }}>hello</h2>
+                })}
+                
             </div>
         </div>
       </div>

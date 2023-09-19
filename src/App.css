@@ -465,3 +465,12 @@ h3 {
 .navigation {
   visibility: hidden;
 }
+
+.ai-textprompt {
+  border-radius: 5px;
+  margin-left: 30px;
+  height: 35px;
+  border: #FFF;
+  text-decoration: none;
+  width: 200px;
+}

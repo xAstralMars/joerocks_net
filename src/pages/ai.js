@@ -30,6 +30,7 @@ const Artificial = () => {
 
    const [messages, setMessages] = useState([]);
    const [inputText, setInputText] = useState('');
+   const [resp, setResp] = useState();
 
    const generateText = async () => {
     if (inputText.trim() === '') {
@@ -91,6 +92,9 @@ const Artificial = () => {
           };
   
           setMessages([...messages, newUserMessage, newBotMessage]);
+          setResp(newBotMessage.content)
+          console.log(newBotMessage.content)
+
           setInputText('');
         } else {
           console.error('Response structure is not as expected.');
@@ -192,13 +196,14 @@ const Artificial = () => {
                     <input className="ai-textprompt" type="text" value={inputText} onChange={(e) => {
                         setInputText(e.target.value)
                     }}></input>
-                    <button className="ai-submitbtn" type="submit">Submit</button>
+                    <button className="ai-submitbtn" type="submit">Send</button>
                 </form>
-                {messages.map((e) => {
-                    return (
-                      <h2 style={{ color: "#FFFFFF" }}>text</h2>
-                    );
-                })}
+                {resp && (
+                  <div>
+                    <h3 className="ai-result" style={{ color: "#FFFFFF" }}><font className="ai-resultfont">AI:</font> {resp}</h3>
+                  </div>
+                )}
+                
                 
             </div>
         </div>

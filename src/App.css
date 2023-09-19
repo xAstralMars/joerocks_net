@@ -204,7 +204,7 @@ h3 {
   position: fixed;
   left: 0;
   top: 0;
-  height: 100%;
+  height: 100vh;
   width: 78px;
   background: #101010;
   padding: 6px 14px;
@@ -470,7 +470,26 @@ h3 {
   border-radius: 5px;
   margin-left: 30px;
   height: 35px;
-  border: #FFF;
+  border: none;
   text-decoration: none;
   width: 200px;
+}
+
+.ai-result {
+  margin-top: 35px;
+}
+
+.ai-resultfont {
+  color: #00ff95;
+  font-size: 30px;
+}
+
+.ai-submitbtn {
+  margin-left: 10px;
+  height: 35px;
+  width: 75px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #00ff95;
 }

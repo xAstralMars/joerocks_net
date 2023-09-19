@@ -189,6 +189,7 @@ const Artificial = () => {
     </div>
           <div className='homepageWrapper'>
             <div className="homepage-sidebarfix">
+                <h2 style={{ color: "#FFFFFF" }}>This AI does <u>not</u> remember what you previously say. It is not perfect.</h2>
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     generateText();

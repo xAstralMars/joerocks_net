@@ -194,8 +194,10 @@ const Artificial = () => {
                     }}></input>
                     <button className="ai-submitbtn" type="submit">Submit</button>
                 </form>
-                {messages.map((text) => {
-                    <h2 style={{ color: "#FFFFFF" }}>{text && (text)}</h2>
+                {messages.map((e) => {
+                    return (
+                      <h2 style={{ color: "#FFFFFF" }}>text</h2>
+                    );
                 })}
                 
             </div>

@@ -98,7 +98,7 @@ const contact = () => {
             <i className="bx bx-pie-chart-alt-2"><Cloud color={'#FFFFFF'} style={{marginTop: "12px"}}></Cloud></i>
             <span className="links_name">AI</span>
           </NavLink>
-          <span className="tooltip">AI</span>
+          <span className="tooltip">AI Test</span>
         </li>
       </ul>
     </div>

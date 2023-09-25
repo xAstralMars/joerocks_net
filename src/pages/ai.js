@@ -30,7 +30,6 @@ const Artificial = () => {
 
    const [messages, setMessages] = useState([]);
    const [inputText, setInputText] = useState('');
-   const [resp, setResp] = useState();
 
    const generateText = async () => {
     if (inputText.trim() === '') {
@@ -78,7 +77,7 @@ const Artificial = () => {
           // Add the user's input to the messages array
           const newUserMessage = {
             id: messages.length + 1,
-            text: inputText,
+            text: "You: "+inputText,
             sender: 'user', // Set the sender as 'user'
             timestamp: new Date().getTime(),
           };
@@ -86,14 +85,15 @@ const Artificial = () => {
           // Add the bot's response to the messages array
           const newBotMessage = {
             id: messages.length + 2,
-            content: botResponse,
+            content: "AI: "+botResponse,
             sender: 'bot', // Set the sender as 'bot'
             timestamp: new Date().getTime(),
           };
   
           setMessages([...messages, newUserMessage, newBotMessage]);
+          console.log(messages);
           setResp(newBotMessage.content)
-          console.log(newBotMessage.content)
+          
 
           setInputText('');
         } else {
@@ -189,7 +189,7 @@ const Artificial = () => {
     </div>
           <div className='homepageWrapper'>
             <div className="homepage-sidebarfix">
-                <h2 style={{ color: "#FFFFFF" }}>This AI does <u>not</u> remember what you previously say. It is not perfect.</h2>
+                <h2 style={{ color: "#FFFFFF", marginLeft: "30px"}}>This AI is not perfect.</h2>
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     generateText();
@@ -199,12 +199,20 @@ const Artificial = () => {
                     }}></input>
                     <button className="ai-submitbtn" type="submit">Send</button>
                 </form>
-                {resp && (
+                {/* {resp && (
                   <div>
                     <h3 className="ai-result" style={{ color: "#FFFFFF" }}><font className="ai-resultfont">AI:</font> {resp}</h3>
                   </div>
-                )}
-                
+                )} */}
+
+                {messages.map((message) => {
+                  return(
+                    <div>
+                      <h2 style={{color: "FFFFFF", marginLeft: "30px"}}>{message.sender === "user" && (message.text)}</h2>
+                      <h2 style={{color: "FFFFFF", marginLeft: "30px"}}>{message.sender === "bot" && (message.content)}</h2>
+                    </div>
+                  )
+                })}
                 
             </div>
         </div>

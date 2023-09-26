@@ -92,7 +92,6 @@ const Artificial = () => {
   
           setMessages([...messages, newUserMessage, newBotMessage]);
           console.log(messages);
-          setResp(newBotMessage.content)
           
 
           setInputText('');

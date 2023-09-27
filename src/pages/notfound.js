@@ -11,7 +11,7 @@ const notfound = () => {
     return (
         <div>
             <header>
-              <h2 className="logo">Liberate</h2>
+              <h2 className="logo"><font className="fontlogo2">joerocks</font><font className="fontlogo">.net</font></h2>
               <nav className="navigation">
                   <NavLink to="/home" >Home</NavLink>
                   <NavLink to="/products" >Products</NavLink>
